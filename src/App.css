@@ -57,6 +57,10 @@ body {
     width: 20px;
     margin: 0 5px;
     border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.27);
+}
+
+.button--clear:hover {
     background: rgba(255, 255, 255, 0.37);
 }
 
