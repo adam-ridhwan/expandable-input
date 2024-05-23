@@ -1,5 +1,6 @@
 import { ChangeEvent, RefObject, useRef, useState } from 'react';
 import { useClickOutside } from './useClickOutside.ts';
+import { useKeyCollapse } from './useKeyCollapse.ts';
 
 type UseExpandableInputReturn = {
   state: {
@@ -23,12 +24,17 @@ export const useExpandableInput = (): UseExpandableInputReturn => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const wrapperRef = useClickOutside<HTMLDivElement>(() => {
-    if (query.length > 0) return;
     setIsExpanded(false);
     setQuery('');
   });
 
   const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useKeyCollapse(() => {
+    if (!isExpanded) return;
+    setIsExpanded(false);
+    setQuery('');
+  });
 
   const handleExpand = () => {
     setIsExpanded(!isExpanded);

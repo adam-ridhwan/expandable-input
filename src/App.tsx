@@ -11,8 +11,12 @@ function App() {
 
   return (
     <div ref={wrapperRef} className='wrapper'>
-      <button type='button' className='search-button' onClick={handleExpand}>
-        <SearchIcon className='search-icon' />
+      <button
+        type='button'
+        className='button button--search'
+        onClick={handleExpand}
+      >
+        <SearchIcon className='icon icon--search' />
       </button>
 
       <div className={`container ${isExpanded ? 'expanded' : ''}`}>
@@ -20,18 +24,19 @@ function App() {
           ref={inputRef}
           type='text'
           value={query}
+          placeholder='Search...'
           onChange={(e) => handleInput(e)}
           disabled={!isExpanded}
-          className='query-input'
+          className='input'
         />
 
         <button
           type='button'
-          className={`clear-button ${query.length < 1 ? 'hidden' : ''}`}
+          className={`button button--clear ${query.length < 1 ? 'hidden' : ''}`}
           onClick={handleClear}
           disabled={!isExpanded}
         >
-          <X className='clear-icon' />
+          <X className='icon icon--clear' />
         </button>
       </div>
     </div>

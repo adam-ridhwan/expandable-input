@@ -3,12 +3,7 @@
     line-height: 1.5;
     font-weight: 400;
     color-scheme: dark;
-    color: rgba(255, 255, 255, 0.87);
     background-color: #242424;
-
-    --default-height: 30px;
-    --icon-size: 10px;
-    --expanded-width: 200px;
 }
 
 body {
@@ -40,27 +35,50 @@ body {
 }
 
 .expanded {
-    width: var(--expanded-width);
+    width: 200px;
 }
 
-.search-button, .clear-button {
-    height: var(--default-height);
-    width: var(--default-height);
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: none;
     border: none;
 }
 
-.search-icon, .clear-icon {
-    min-height: var(--icon-size);
-    min-width: var(--icon-size);
+.button--search {
+    height: 30px;
+    width: 30px;
+    background: none;
 }
 
-.query-input {
-    height: var(--default-height);
+.button--clear {
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.37);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    stroke: white;
+}
+
+.icon--search {
+    min-height: 10px;
+    min-width: 10px;
+}
+
+.icon--clear {
+    min-height: 13px;
+    min-width: 13px;
+}
+
+.input {
+    height: 30px;
     width: 100%;
     border: none;
     background: none;
