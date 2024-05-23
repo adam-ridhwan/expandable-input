@@ -1,0 +1,73 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    --default-height: 30px;
+    --icon-size: 10px;
+    --expanded-width: 200px;
+}
+
+body {
+    min-height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.87);
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+}
+
+.expanded {
+    width: var(--expanded-width);
+}
+
+.search-button, .clear-button {
+    height: var(--default-height);
+    width: var(--default-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.search-icon, .clear-icon {
+    min-height: var(--icon-size);
+    min-width: var(--icon-size);
+}
+
+.query-input {
+    height: var(--default-height);
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
